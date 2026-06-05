@@ -29,3 +29,6 @@ class Event {
         fs.writeFileSync(this.eventsFilePath, JSON.stringify(events));
     }
 }
+
+
+export { Event };

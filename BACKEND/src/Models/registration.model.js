@@ -23,10 +23,24 @@ class Registration {
         return registrations;
     }
 
-    registerUser(userData){
+    registerUser(userData) {
         const registrations = this.readRegistrations();
         registrations.push(userData);
-        fs.writeFileSync(this.registrationsFilePath, JSON.stringify(registrations));
+        fs.writeFileSync(
+            this.registrationsFilePath,
+            JSON.stringify(registrations)
+        );
+    }
+
+    cancelRegistration(registrationId) {
+        const registrations = this.readRegistrations();
+        const updatedRegistrations = registrations.filter(
+            (reg) => reg.id !== registrationId
+        );
+        fs.writeFileSync(
+            this.registrationsFilePath,
+            JSON.stringify(updatedRegistrations)
+        );
     }
 }
 

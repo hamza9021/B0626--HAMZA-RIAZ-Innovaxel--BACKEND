@@ -20,6 +20,7 @@ const createEvent = async (req, res) => {
             totalSeats,
             eventDate,
             availableSeats: totalSeats,
+            registrations: []
         };
 
         const events = new Event();

@@ -16,7 +16,7 @@ class Registration {
         );
     }
 
-    getRegistrations() {
+    readRegistrations() {
         const registrations = JSON.parse(
             fs.readFileSync(this.registrationsFilePath, "utf-8")
         );
@@ -24,7 +24,7 @@ class Registration {
     }
 
     registerUser(userData){
-        const registrations = this.getRegistrations();
+        const registrations = this.readRegistrations();
         registrations.push(userData);
         fs.writeFileSync(this.registrationsFilePath, JSON.stringify(registrations));
     }

@@ -28,6 +28,16 @@ class Event {
         events.push(eventData);
         fs.writeFileSync(this.eventsFilePath, JSON.stringify(events));
     }
+
+    updateEvent(eventId, updatedData) {
+        const events = this.readEvents();
+        const eventIndex = events.findIndex((event) => event.id === eventId);
+        if (eventIndex === -1) {
+            throw new Error("Event not found");
+        }
+        events[eventIndex] = { ...events[eventIndex], ...updatedData };
+        fs.writeFileSync(this.eventsFilePath, JSON.stringify(events));
+    }
 }
 
 

@@ -27,12 +27,7 @@ class DB {
         if (!fs.existsSync(eventsFilePath)) {
             fs.writeFileSync(eventsFilePath, JSON.stringify([]));
         }
-
-        const usersFilePath = path.join(dataFilePath, "users.json");
-
-        if (!fs.existsSync(usersFilePath)) {
-            fs.writeFileSync(usersFilePath, JSON.stringify([]));
-        }
+        
     }
 }
 

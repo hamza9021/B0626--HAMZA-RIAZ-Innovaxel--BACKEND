@@ -92,8 +92,8 @@ npm --version
 **1. Clone the repository:**
 
 ```bash
-git clone <your-repository-url>
-cd "PROJECT IMP/BACKEND"
+git clone https://github.com/hamza9021/B0626--HAMZA-RIAZ-Innovaxel--BACKEND
+cd BACKEND
 ```
 
 **2. Install dependencies:**
@@ -156,7 +156,7 @@ Database initialized
 
 ## API Reference
 
-**Base URL:** `http://localhost:<PORT>`
+**Base URL:** `http://localhost:<PORT NUMBER>`
 
 All API endpoints are prefixed with: `/api/v1/`
 

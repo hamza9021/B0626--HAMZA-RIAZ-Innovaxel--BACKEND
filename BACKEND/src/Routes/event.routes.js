@@ -1,7 +1,8 @@
-import {Router} from 'express';
+import { Router } from "express";
 const eventRouter = Router();
-import { createEvent } from '../Controllers/event.controller.js';
+import { createEvent, getAllEvents } from "../Controllers/event.controller.js";
 
-eventRouter.post('/create', createEvent);
+eventRouter.post("/create", createEvent);
+eventRouter.get("/", getAllEvents);
 
 export { eventRouter };

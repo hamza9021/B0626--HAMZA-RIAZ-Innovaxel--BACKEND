@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "20kb" }));
 app.use("/api/v1/events", eventRouter);
+app.use("/api/v1/events", eventRouter);
 app.use("/api/v1/registrations", registrationRouter);
 
 

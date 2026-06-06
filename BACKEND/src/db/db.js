@@ -6,7 +6,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 class DB {
-
     init() {
         const dataFilePath = path.join(__dirname, "..", "..", "data");
 
@@ -29,8 +28,12 @@ class DB {
             fs.writeFileSync(eventsFilePath, JSON.stringify([]));
         }
 
+        const usersFilePath = path.join(dataFilePath, "users.json");
+
+        if (!fs.existsSync(usersFilePath)) {
+            fs.writeFileSync(usersFilePath, JSON.stringify([]));
+        }
     }
 }
-
 
 export { DB };

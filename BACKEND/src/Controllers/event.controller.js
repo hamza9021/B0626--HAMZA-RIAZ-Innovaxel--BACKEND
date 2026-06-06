@@ -1,4 +1,3 @@
-import { wrapperFunction } from "../Utils/asyncWrap.js";
 import { ApiError } from "../Utils/ApiError.js";
 import { ApiResponse } from "../Utils/ApiResponse.js";
 import { Event } from "../Models/event.model.js";
@@ -20,6 +19,7 @@ const createEvent = async (req, res) => {
             eventName,
             totalSeats,
             eventDate,
+            availableSeats: totalSeats,
         };
 
         const events = new Event();
